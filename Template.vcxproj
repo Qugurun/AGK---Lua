@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{147BF424-49C6-4C6D-A6F1-A38D1A0850DA}</ProjectGuid>
+    <RootNamespace>SmackIt</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+    <PlatformToolset>v120_xp</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>NotSet</CharacterSet>
+    <PlatformToolset>v120_xp</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Final\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Final\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LibraryPath>$(VC_LibraryPath_x86);$(WindowsSdk_71A_LibraryPath_x86);</LibraryPath>
+    <IncludePath>lua-5.3.2/src;$(VC_IncludePath);$(WindowsSdk_71A_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>lua-5.3.2/src;$(VC_IncludePath);$(WindowsSdk_71A_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\common\Include;..\..\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;IDE_VS2008;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>AGKWindows.lib;OpenGL32.lib;winmm.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>Final\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>..\..\platform\windows\Lib\VS2013\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>atls.lib</IgnoreSpecificDefaultLibraries>
+      <DelayLoadDLLs>Dwmapi.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>..\..\common\Include;..\..\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;IDE_VS2008;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>AGKWindows.lib;OpenGL32.lib;Winmm.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>Final\$(ProjectName).exe</OutputFile>
+      <AdditionalLibraryDirectories>..\..\platform\windows\Lib\VS2013\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>Dwmapi.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <IgnoreSpecificDefaultLibraries>atls.lib</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AGKLua.cpp" />
+    <ClCompile Include="Core.cpp" />
+    <ClCompile Include="lua-5.3.2\src\lapi.c" />
+    <ClCompile Include="lua-5.3.2\src\lauxlib.c" />
+    <ClCompile Include="lua-5.3.2\src\lbaselib.c" />
+    <ClCompile Include="lua-5.3.2\src\lbitlib.c" />
+    <ClCompile Include="lua-5.3.2\src\lcode.c" />
+    <ClCompile Include="lua-5.3.2\src\lcorolib.c" />
+    <ClCompile Include="lua-5.3.2\src\lctype.c" />
+    <ClCompile Include="lua-5.3.2\src\ldblib.c" />
+    <ClCompile Include="lua-5.3.2\src\ldebug.c" />
+    <ClCompile Include="lua-5.3.2\src\ldo.c" />
+    <ClCompile Include="lua-5.3.2\src\ldump.c" />
+    <ClCompile Include="lua-5.3.2\src\lfunc.c" />
+    <ClCompile Include="lua-5.3.2\src\lgc.c" />
+    <ClCompile Include="lua-5.3.2\src\linit.c" />
+    <ClCompile Include="lua-5.3.2\src\liolib.c" />
+    <ClCompile Include="lua-5.3.2\src\llex.c" />
+    <ClCompile Include="lua-5.3.2\src\lmathlib.c" />
+    <ClCompile Include="lua-5.3.2\src\lmem.c" />
+    <ClCompile Include="lua-5.3.2\src\loadlib.c" />
+    <ClCompile Include="lua-5.3.2\src\lobject.c" />
+    <ClCompile Include="lua-5.3.2\src\lopcodes.c" />
+    <ClCompile Include="lua-5.3.2\src\loslib.c" />
+    <ClCompile Include="lua-5.3.2\src\lparser.c" />
+    <ClCompile Include="lua-5.3.2\src\lstate.c" />
+    <ClCompile Include="lua-5.3.2\src\lstring.c" />
+    <ClCompile Include="lua-5.3.2\src\lstrlib.c" />
+    <ClCompile Include="lua-5.3.2\src\ltable.c" />
+    <ClCompile Include="lua-5.3.2\src\ltablib.c" />
+    <ClCompile Include="lua-5.3.2\src\ltm.c" />
+    <ClCompile Include="lua-5.3.2\src\lua.c" />
+    <ClCompile Include="lua-5.3.2\src\lundump.c" />
+    <ClCompile Include="lua-5.3.2\src\lutf8lib.c" />
+    <ClCompile Include="lua-5.3.2\src\lvm.c" />
+    <ClCompile Include="lua-5.3.2\src\lzio.c" />
+    <ClCompile Include="template.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AGKLua.h" />
+    <ClInclude Include="lua-5.3.2\src\lapi.h" />
+    <ClInclude Include="lua-5.3.2\src\lauxlib.h" />
+    <ClInclude Include="lua-5.3.2\src\lcode.h" />
+    <ClInclude Include="lua-5.3.2\src\lctype.h" />
+    <ClInclude Include="lua-5.3.2\src\ldebug.h" />
+    <ClInclude Include="lua-5.3.2\src\ldo.h" />
+    <ClInclude Include="lua-5.3.2\src\lfunc.h" />
+    <ClInclude Include="lua-5.3.2\src\lgc.h" />
+    <ClInclude Include="lua-5.3.2\src\llex.h" />
+    <ClInclude Include="lua-5.3.2\src\llimits.h" />
+    <ClInclude Include="lua-5.3.2\src\lmem.h" />
+    <ClInclude Include="lua-5.3.2\src\lobject.h" />
+    <ClInclude Include="lua-5.3.2\src\lopcodes.h" />
+    <ClInclude Include="lua-5.3.2\src\lparser.h" />
+    <ClInclude Include="lua-5.3.2\src\lprefix.h" />
+    <ClInclude Include="lua-5.3.2\src\lstate.h" />
+    <ClInclude Include="lua-5.3.2\src\lstring.h" />
+    <ClInclude Include="lua-5.3.2\src\ltable.h" />
+    <ClInclude Include="lua-5.3.2\src\ltm.h" />
+    <ClInclude Include="lua-5.3.2\src\lua.h" />
+    <ClInclude Include="lua-5.3.2\src\lua.hpp" />
+    <ClInclude Include="lua-5.3.2\src\luaconf.h" />
+    <ClInclude Include="lua-5.3.2\src\lualib.h" />
+    <ClInclude Include="lua-5.3.2\src\lundump.h" />
+    <ClInclude Include="lua-5.3.2\src\lvm.h" />
+    <ClInclude Include="lua-5.3.2\src\lzio.h" />
+    <ClInclude Include="template.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
